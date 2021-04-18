@@ -16,7 +16,7 @@ export const TRACKS = gql`
         name
         photo
       }
-    } 
+    }
   }
 `;
 /**
@@ -25,8 +25,9 @@ export const TRACKS = gql`
  */
 const Tracks = () => {
   const {loading, error, data} = useQuery(TRACKS);
+  console.log(error, loading, data);
   if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  if (error) return `ERROR! memes ${error.message}`;
   return <Layout grid>{JSON.stringify(data)}</Layout>;
 };
  
