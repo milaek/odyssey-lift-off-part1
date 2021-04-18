@@ -27,7 +27,7 @@ const Tracks = () => {
   const {loading, error, data} = useQuery(TRACKS);
   console.log(error, loading, data);
   if (loading) return 'Loading...';
-  if (error) return `ERROR! memes ${error.message}`;
+  if (error) return `ERROR! ${error.message}`;
   return <Layout grid>{JSON.stringify(data)}</Layout>;
 };
  
